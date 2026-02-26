@@ -17,12 +17,12 @@ export function activate(context: vscode.ExtensionContext) {
     if (process.platform === 'win32') {
       // Windows: Use PowerShell with a hidden window style
       const command = `powershell -Command "(New-Object Media.SoundPlayer '${soundFile}').PlaySync()"`;
-      // For MP3s, we use this specific command which runs in the background
+      // For MP3s,  use this specific command which runs in the background
       const mp3Command = `powershell -WindowStyle Hidden -Command "Add-Type -AssemblyName PresentationCore; $player = New-Object System.Windows.Media.MediaPlayer; $player.Open('${soundFile}'); $player.Play(); Start-Sleep -s 5"`;
       
       exec(mp3Command);
     } else {
-      // Mac/Linux: These usually don't pop up windows anyway
+      // Mac/Linux: 
       const player = require('play-sound')();
       player.play(soundFile, (err: any) => {
         if (err) console.error('Sound play failed:', err);
