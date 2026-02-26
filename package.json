@@ -1,0 +1,40 @@
+{
+  "name": "faaah",
+  "displayName": "Faaah",
+  "publisher": "iamfreak",
+  "description": "Play FAAAAAAAH sound when task fails",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "faaah.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/play-sound": "^1.1.2",
+    "@types/vscode": "^1.108.0",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "play-sound": "^1.1.6"
+  }
+}
